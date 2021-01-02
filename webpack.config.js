@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
   entry: './src/index.js',
@@ -9,6 +10,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Output Management',
     }),
+    new VueLoaderPlugin()
   ],
   output: {
     filename: 'bundle.js',
@@ -17,8 +19,19 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader'
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'vue-style-loader',
+          'css-loader'
+        ]
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
