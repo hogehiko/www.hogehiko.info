@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="root">
      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container">
               <a class="navbar-brand" href="#">www.hogehiko.info</a>
@@ -25,13 +25,13 @@
           <div class="container">
       
             <!-- Page Heading -->
-            <h1 class="my-4">Works
-              <small>2019</small>
+            <h1 class="my-4">HOME
+              
             </h1>
             
             <div class="row">
 
-              <div v-for="link in links" class="col-lg-4 col-sm-6 portfolio-item">
+              <div v-bind:key="link.title" v-for="link in links" class="col-lg-4 col-sm-6 portfolio-item">
                 <div class="card h-100">
                   <a v-bind:href="link.href">
                     <img class="card-img-top" v-bind:src="link.img" alt=""></a>
@@ -83,23 +83,48 @@
 
 
 <script>
-data(){
-    return {
-        message: 'Hello Vue!',
-        links: null 
-    }
-    
-},
+import axios from 'axios';
+export default {
+  data(){
+      return {
+          message: 'Hello Vue!',
+          links: null 
+      }
+      
+  },
 
-mounted(){
-    console.log("axios");
-    axios.get("/api/links.json")
-    .then(response=> (this.links = response.data.items))
+  mounted(){
+      console.log("axios");
+      axios.get("/api/links.json")
+      .then(response=> (this.links = response.data.items))
 
+  }
 }
-
 </script>
 
 <style>
+/*!
+ * Start Bootstrap - 3 Col Portfolio (https://startbootstrap.com/template-overviews/3-col-portfolio)
+ * Copyright 2013-2018 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-3-col-portfolio/blob/master/LICENSE)
+ */
+
+.root {
+  padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+  .root {
+    padding-top: 56px;
+  }
+}
+
+.portfolio-item {
+  margin-bottom: 30px;
+}
+
+.pagination {
+  margin-bottom: 30px;
+}
 
 </style>

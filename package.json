@@ -6,9 +6,11 @@
     "serve": "vue-cli-service serve",
     "watch": "vue-cli-service build --mode development --watch",
     "build": "vue-cli-service build --mode development",
+    "build-prod": "vue-cli-service build --mode production",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "vue": "^2.6.11"
   },
