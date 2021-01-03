@@ -8,11 +8,6 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="#">Works
-                      <span class="sr-only">(current)</span>
-                    </a>
-                  </li>
                   <li class="nav-item">
                     <a class="nav-link" href="https://twitter.com/hogehiko">Contact</a>
                   </li>
@@ -23,12 +18,6 @@
       
           <!-- Page Content -->
           <div class="container">
-      
-            <!-- Page Heading -->
-            <h1 class="my-4">HOME
-              
-            </h1>
-            
             <div class="row">
 
               <div v-bind:key="link.title" v-for="link in links" class="col-lg-4 col-sm-6 portfolio-item">
@@ -37,8 +26,7 @@
                     <img class="card-img-top" v-bind:src="link.img" alt=""></a>
                   <div class="card-body">
                     <h4 class="card-title">
-                      <a href="#">{{link.title}}</a>
-                      <small>{{link.date}}</small>
+                      <a :href="link.href">{{link.title}}</a>
                     </h4>
                     <p class="card-text">{{link.description}}</p>
                   </div>
@@ -46,25 +34,6 @@
               </div>
             </div>
             <!-- /.row -->
-      
-            <!-- Pagination -->
-            <ul class="pagination justify-content-center">
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                  <span class="sr-only">Previous</span>
-                </a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#">2019</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                  <span class="sr-only">Next</span>
-                </a>
-              </li>
-            </ul>
       
           </div>
           <!-- /.container -->
@@ -103,12 +72,6 @@ export default {
 </script>
 
 <style>
-/*!
- * Start Bootstrap - 3 Col Portfolio (https://startbootstrap.com/template-overviews/3-col-portfolio)
- * Copyright 2013-2018 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-3-col-portfolio/blob/master/LICENSE)
- */
-
 .root {
   padding-top: 54px;
 }

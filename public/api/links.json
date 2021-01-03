@@ -1,13 +1,28 @@
 {
     "items":[
         {
-            "date": "2019-01-1",
             "title": "このページ",
             "href": "#",
             "img": "img/steamrock.jpg",
             "description": "@hogehikoです。作ったものがいろんなサービスに散らかっていく気がするのでリンク集を作りました。ネット広告関係のプログラマ。趣味は作曲です。"
+        },
+        {
+            "title": "SoundCloud",
+            "href": "https://soundcloud.com/hogehiko",
+            "img": "img/064.JPG",
+            "description": "自作曲を上げてます。"
+        },
+        {
+            "title": "Spice Blog",
+            "href": "http://blog.hogehiko.info/",
+            "img": "img/001.JPG",
+            "description": "日記"
+        },
+        {
+            "title": "hogehiko.github.io",
+            "href": "https://hogehiko.github.io/",
+            "img": "img/182.JPG",
+            "description": "技術ネタの置き場です。"
         }
-
     ]
-
 }
