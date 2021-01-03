@@ -9,8 +9,8 @@ deploy:
 env:
 	nvm use 14.15.3
 
+build:
+	npm run build
+
 watch:
 	npm run watch
-
-serve:
-	npm run serve

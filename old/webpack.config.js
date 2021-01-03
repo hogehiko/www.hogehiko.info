@@ -4,11 +4,12 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/app.js',
+  mode: 'development',
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Output Management',
+      title: 'Vue',
     }),
     new VueLoaderPlugin()
   ],
@@ -39,4 +40,9 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js' // 'vue/dist/vue.common.js' webpack 1 c”¨
+    },
+  }
 };
